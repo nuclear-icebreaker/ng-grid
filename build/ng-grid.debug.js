@@ -2276,6 +2276,7 @@ var ngRowFactory = function (grid, $scope, domUtilityService, $templateCache, $u
             self.getGrouping(grid.config.groups);
         }
         self.UpdateViewableRange(self.renderedRange);
+        domUtilityService.RebuildGrid($scope,grid);
     };
 
     self.renderedChange = function() {
@@ -3125,10 +3126,10 @@ ngGridDirectives.directive('ngGrid', ['$compile', '$filter', '$templateCache', '
                                 }
                                 $scope.$emit("ngGridEventData", grid.gridId);
                             };
-                            $scope.$parent.$watch(options.data, dataWatcher);
+                            $scope.$parent.$watch(options.data, dataWatcher, true);
                             $scope.$parent.$watch(options.data + '.length', function() {
                                 dataWatcher($scope.$eval(options.data));
-                            });
+                            }, true);
                         }
                         
                         grid.footerController = new ngFooter($scope, grid);
@@ -3568,7 +3569,7 @@ angular.module("ngGrid").run(["$templateCache", function($templateCache) {
     "    <div class=\"ngSortButtonDown\" ng-show=\"col.showSortButtonDown()\"></div>" +
     "    <div class=\"ngSortButtonUp\" ng-show=\"col.showSortButtonUp()\"></div>" +
     "    <div class=\"ngSortPriority\">{{col.sortPriority}}</div>" +
-    "    <div ng-class=\"{ ngPinnedIcon: col.pinned, ngUnPinnedIcon: !col.pinned }\" ng-click=\"togglePin(col)\" ng-show=\"col.pinnable\"></div>" +
+    "    <div ng-class=\"{ 'ngPinnedIcon fa fa-thumb-tack': col.pinned, 'ngPinnedIcon fa fa-thumb-tack fa-rotate-45': !col.pinned }\" ng-click=\"togglePin(col)\" ng-show=\"col.pinnable\"></div>" +
     "</div>" +
     "<div ng-show=\"col.resizable\" class=\"ngHeaderGrip\" ng-click=\"col.gripClick($event)\" ng-mousedown=\"col.gripOnMouseDown($event)\"></div>"
   );
