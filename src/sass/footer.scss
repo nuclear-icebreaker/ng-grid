@@ -1,0 +1,28 @@
+.ngFooterPanel {
+    color: $ngGrid-panel-color;
+    background-color: $ngGrid-panel-bg;
+    padding: 0;
+    border-top: 1px solid $ngGrid-border-color;
+    position: relative;
+}
+
+.nglabel {
+    display: block;
+    float: left;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.ngTotalSelectContainer {
+    float: left;
+    margin: 5px;
+    margin-top: 7px;
+}
+
+.ngFooterSelectedItems {
+    padding: 2px;
+}
+
+.ngFooterTotalItems.ngnoMultiSelect {
+    padding: 0 !important;
+}

@@ -1,0 +1,16 @@
+.ngRow {
+  position: absolute;
+  border-bottom: 1px solid $ngGrid-border-color;
+}
+
+.ngRow.odd {
+  background-color: $ngGrid-even-row-bg; //rgb(253, 253, 253);
+}
+
+.ngRow.even {
+  background-color: $ngGrid-odd-row-bg;
+}
+
+.ngRow.selected {
+  background-color: $ngGrid-selected-row-bg; //rgb(201, 221, 225);
+}

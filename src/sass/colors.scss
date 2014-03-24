@@ -1,0 +1,31 @@
+
+$ngGrid-bg: $bg;
+
+// Gray color for header and footer and panels
+$ngGrid-header-bg: lighten($top-nav-bg, 10%);
+$ngGrid-header-color: invert($top-nav-bg);
+
+$ngGrid-panel-bg: $ngGrid-header-bg;
+$ngGrid-panel-color: $ngGrid-header-color;
+
+// Gray colors used for row alternation
+$ngGrid-even-row-bg: #fdfdfd;
+$ngGrid-odd-row-bg: #f3f3f3;
+
+// Gray for borders
+$ngGrid-border-color: lighten($panel-border-color, 10%);
+
+// Used for columnmenu buton
+$ngGrid-column-menu-bg: #bdd0cb;
+
+// Used for column menu background
+$ngGrid-column-menu-bg: darken($ngGrid-column-menu-bg, 10%);
+
+// Used for row selections
+$ngGrid-selected-row-bg: #C9DDE1; // #b3c4c7;
+
+// Used for cell selections
+$ngGrid-selected-cell-bg: #b3c4c7;
+
+// Color for buttons
+$ngGrid-button-bg: lighten(#333, 10%);
